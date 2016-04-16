@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Feature coop mbv context feature.
+ */
+
+include_once 'feature_coop_mbv_context.features.inc';

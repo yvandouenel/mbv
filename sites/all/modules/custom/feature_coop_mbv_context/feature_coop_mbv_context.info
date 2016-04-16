@@ -1,0 +1,17 @@
+name = Feature coop mbv context
+core = 7.x
+package = MBV
+version = 7.x-1.0
+dependencies[] = bean
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = menu
+dependencies[] = menu_block
+dependencies[] = search
+dependencies[] = twitter_block
+features[context][] = home
+features[context][] = large_screen
+features[context][] = partout
+features[ctools][] = context:context:3
+features[features_api][] = api:2
+project path = sites/all/modules/custom
