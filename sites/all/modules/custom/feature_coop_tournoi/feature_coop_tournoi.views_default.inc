@@ -67,7 +67,7 @@ function feature_coop_tournoi_views_default_views() {
   $handler->display->display_options['fields']['field_nom_et_prenom_joueur_2']['field'] = 'field_nom_et_prenom_joueur_2';
   $handler->display->display_options['fields']['field_nom_et_prenom_joueur_2']['label'] = '';
   $handler->display->display_options['fields']['field_nom_et_prenom_joueur_2']['element_label_colon'] = FALSE;
-  /* Contextual filter: Contenu: Nid */
+  /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';

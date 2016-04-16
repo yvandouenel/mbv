@@ -97,9 +97,9 @@ function feature_coop_tournoi_default_registration_type() {
     "label" : "Tournoi 4x4",
     "locked" : "0",
     "default_state" : "held",
+    "data" : null,
     "weight" : "0",
-    "rdf_mapping" : [],
-    "data" : { "held_expire" : "1", "held_expire_state" : "pending" }
+    "rdf_mapping" : []
   }');
   $items['tournoi_three_registration'] = entity_import('registration_type', '{
     "name" : "tournoi_three_registration",
