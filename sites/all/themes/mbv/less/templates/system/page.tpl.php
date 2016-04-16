@@ -75,6 +75,9 @@
 ?>
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="<?php print $container_class; ?>">
+    <?php if (!empty($page['first-top'])): ?>
+      <div class="first-top-bar"><?php print render($page['first-top']); ?></div>
+    <?php endif; ?>
     <div class="navbar-header">
       <?php if ($logo): ?>
         <h1 id="h1-logo">
@@ -167,10 +170,9 @@
   </div>
 </div>
 
-<?php if (!empty($page['footer'])): ?>
   <div class="under-footer">
     <footer class="footer <?php print $container_class; ?>">
       <?php print render($page['footer']); ?>
     </footer>
   </div>
-<?php endif; ?>
+
