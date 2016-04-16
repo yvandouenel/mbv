@@ -13,6 +13,13 @@ function feature_coop_tournoi_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_liste_tournois';
+  $strongarm->value = 0;
+  $export['comment_anonymous_liste_tournois'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_tournoi_four';
   $strongarm->value = 0;
   $export['comment_anonymous_tournoi_four'] = $strongarm;
@@ -30,6 +37,13 @@ function feature_coop_tournoi_strongarm() {
   $strongarm->name = 'comment_anonymous_tournoi_two';
   $strongarm->value = 0;
   $export['comment_anonymous_tournoi_two'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_liste_tournois';
+  $strongarm->value = 1;
+  $export['comment_default_mode_liste_tournois'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -55,6 +69,13 @@ function feature_coop_tournoi_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_liste_tournois';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_liste_tournois'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_tournoi_four';
   $strongarm->value = '50';
   $export['comment_default_per_page_tournoi_four'] = $strongarm;
@@ -72,6 +93,13 @@ function feature_coop_tournoi_strongarm() {
   $strongarm->name = 'comment_default_per_page_tournoi_two';
   $strongarm->value = '50';
   $export['comment_default_per_page_tournoi_two'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_liste_tournois';
+  $strongarm->value = 1;
+  $export['comment_form_location_liste_tournois'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -97,6 +125,20 @@ function feature_coop_tournoi_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_liste_tournois';
+  $strongarm->value = '1';
+  $export['comment_liste_tournois'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_liste_tournois';
+  $strongarm->value = '1';
+  $export['comment_preview_liste_tournois'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_tournoi_four';
   $strongarm->value = '1';
   $export['comment_preview_tournoi_four'] = $strongarm;
@@ -114,6 +156,13 @@ function feature_coop_tournoi_strongarm() {
   $strongarm->name = 'comment_preview_tournoi_two';
   $strongarm->value = '1';
   $export['comment_preview_tournoi_two'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_liste_tournois';
+  $strongarm->value = 1;
+  $export['comment_subject_field_liste_tournois'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -156,6 +205,55 @@ function feature_coop_tournoi_strongarm() {
   $strongarm->name = 'comment_tournoi_two';
   $strongarm->value = '1';
   $export['comment_tournoi_two'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__liste_tournois';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+      ),
+      'display' => array(
+        'extra_field_list_tournaments' => array(
+          'full' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_node__liste_tournois'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -301,6 +399,13 @@ function feature_coop_tournoi_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_liste_tournois';
+  $strongarm->value = '0';
+  $export['language_content_type_liste_tournois'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_tournoi_four';
   $strongarm->value = '0';
   $export['language_content_type_tournoi_four'] = $strongarm;
@@ -318,6 +423,15 @@ function feature_coop_tournoi_strongarm() {
   $strongarm->name = 'language_content_type_tournoi_two';
   $strongarm->value = '0';
   $export['language_content_type_tournoi_two'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_liste_tournois';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_liste_tournois'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -349,6 +463,13 @@ function feature_coop_tournoi_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_liste_tournois';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_liste_tournois'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_tournoi_four';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_tournoi_four'] = $strongarm;
@@ -366,6 +487,15 @@ function feature_coop_tournoi_strongarm() {
   $strongarm->name = 'menu_parent_tournoi_two';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_tournoi_two'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_liste_tournois';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_liste_tournois'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -400,6 +530,13 @@ function feature_coop_tournoi_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_liste_tournois';
+  $strongarm->value = '1';
+  $export['node_preview_liste_tournois'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_tournoi_four';
   $strongarm->value = '1';
   $export['node_preview_tournoi_four'] = $strongarm;
@@ -417,6 +554,13 @@ function feature_coop_tournoi_strongarm() {
   $strongarm->name = 'node_preview_tournoi_two';
   $strongarm->value = '1';
   $export['node_preview_tournoi_two'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_liste_tournois';
+  $strongarm->value = 0;
+  $export['node_submitted_liste_tournois'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

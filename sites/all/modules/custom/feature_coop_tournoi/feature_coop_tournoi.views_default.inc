@@ -67,7 +67,7 @@ function feature_coop_tournoi_views_default_views() {
   $handler->display->display_options['fields']['field_nom_et_prenom_joueur_2']['field'] = 'field_nom_et_prenom_joueur_2';
   $handler->display->display_options['fields']['field_nom_et_prenom_joueur_2']['label'] = '';
   $handler->display->display_options['fields']['field_nom_et_prenom_joueur_2']['element_label_colon'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Contenu: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -109,6 +109,8 @@ function feature_coop_tournoi_views_default_views() {
   $handler->display->display_options['fields']['field_nom_et_pr_nom_joueur_3']['field'] = 'field_nom_et_pr_nom_joueur_3';
   $handler->display->display_options['fields']['field_nom_et_pr_nom_joueur_3']['label'] = '';
   $handler->display->display_options['fields']['field_nom_et_pr_nom_joueur_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_nom_et_pr_nom_joueur_3']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_nom_et_pr_nom_joueur_3']['alter']['text'] = '<span class="beach-player">[field_nom_et_pr_nom_joueur_3]</span>';
   $handler->display->display_options['fields']['field_nom_et_pr_nom_joueur_3']['element_label_colon'] = FALSE;
   /* Champ: Registration: Nom et prénom joueur 4 */
   $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['id'] = 'field_nom_et_prenom_joueur_4';
@@ -116,6 +118,8 @@ function feature_coop_tournoi_views_default_views() {
   $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['field'] = 'field_nom_et_prenom_joueur_4';
   $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['label'] = '';
   $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['alter']['text'] = '<span class="beach-player">[field_nom_et_prenom_joueur_4]</span>';
   $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['element_label_colon'] = FALSE;
   /* Champ: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
@@ -126,8 +130,8 @@ function feature_coop_tournoi_views_default_views() {
 <h4 class="beach-players">Joueurs(euses) : </h4>
 <span class="beach-player">[field_nom_et_prenom_joueur_1]</span> 
 <span class="beach-player">[field_nom_et_prenom_joueur_2]</span>
-<span class="beach-player">[field_nom_et_pr_nom_joueur_3]</span>
-<span class="beach-player">[field_nom_et_prenom_joueur_4]</span>
+[field_nom_et_pr_nom_joueur_3]
+[field_nom_et_prenom_joueur_4]
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $translatables['liste_des_inscrits'] = array(
@@ -145,15 +149,139 @@ function feature_coop_tournoi_views_default_views() {
     t(','),
     t('Tout'),
     t('Block'),
+    t('<span class="beach-player">[field_nom_et_pr_nom_joueur_3]</span>'),
+    t('<span class="beach-player">[field_nom_et_prenom_joueur_4]</span>'),
     t('<div class="team-registrated">
 <h4 class="beach-players">Joueurs(euses) : </h4>
 <span class="beach-player">[field_nom_et_prenom_joueur_1]</span> 
 <span class="beach-player">[field_nom_et_prenom_joueur_2]</span>
-<span class="beach-player">[field_nom_et_pr_nom_joueur_3]</span>
-<span class="beach-player">[field_nom_et_prenom_joueur_4]</span>
+[field_nom_et_pr_nom_joueur_3]
+[field_nom_et_prenom_joueur_4]
 </div>'),
   );
   $export['liste_des_inscrits'] = $view;
+
+  $view = new view();
+  $view->name = 'liste_tournois';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Liste tournois';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Liste tournois';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'plus';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Appliquer';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Trier par';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Champ: Contenu: Titre */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<h3 class="title-tournament-list>[title]</h3>';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Champ: Contenu: Date */
+  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['label'] = 'Date :';
+  $handler->display->display_options['fields']['field_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Champ: Contenu: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '600',
+  );
+  /* Sort criterion: Contenu: Date de publication */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Contenu: Publié */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Contenu: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'tournoi_two' => 'tournoi_two',
+    'tournoi_three' => 'tournoi_three',
+    'tournoi_four' => 'tournoi_four',
+  );
+
+  /* Display: Block tournament */
+  $handler = $view->new_display('block', 'Block tournament', 'block_tournament');
+
+  /* Display: Block tournament filtred */
+  $handler = $view->new_display('block', 'Block tournament filtred', 'block_tournament_filtred');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Contenu: Type de tournoi (field_type_de_tournoi) */
+  $handler->display->display_options['relationships']['field_type_de_tournoi_tid']['id'] = 'field_type_de_tournoi_tid';
+  $handler->display->display_options['relationships']['field_type_de_tournoi_tid']['table'] = 'field_data_field_type_de_tournoi';
+  $handler->display->display_options['relationships']['field_type_de_tournoi_tid']['field'] = 'field_type_de_tournoi_tid';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Contenu: Type de tournoi (field_type_de_tournoi) */
+  $handler->display->display_options['arguments']['field_type_de_tournoi_tid']['id'] = 'field_type_de_tournoi_tid';
+  $handler->display->display_options['arguments']['field_type_de_tournoi_tid']['table'] = 'field_data_field_type_de_tournoi';
+  $handler->display->display_options['arguments']['field_type_de_tournoi_tid']['field'] = 'field_type_de_tournoi_tid';
+  $handler->display->display_options['arguments']['field_type_de_tournoi_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_type_de_tournoi_tid']['exception']['title'] = 'Tout';
+  $handler->display->display_options['arguments']['field_type_de_tournoi_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_type_de_tournoi_tid']['default_argument_options']['node'] = TRUE;
+  $handler->display->display_options['arguments']['field_type_de_tournoi_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_type_de_tournoi_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_type_de_tournoi_tid']['summary_options']['items_per_page'] = '25';
+  $translatables['liste_tournois'] = array(
+    t('Master'),
+    t('Liste tournois'),
+    t('plus'),
+    t('Appliquer'),
+    t('Réinitialiser'),
+    t('Trier par'),
+    t('Asc'),
+    t('Desc'),
+    t('<h3 class="title-tournament-list>[title]</h3>'),
+    t('Date :'),
+    t('Block tournament'),
+    t('Block tournament filtred'),
+    t('term from field_type_de_tournoi'),
+    t('Tout'),
+  );
+  $export['liste_tournois'] = $view;
 
   return $export;
 }

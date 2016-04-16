@@ -28,6 +28,14 @@ function feature_coop_tournoi_views_api($module = NULL, $api = NULL) {
  */
 function feature_coop_tournoi_node_info() {
   $items = array(
+    'liste_tournois' => array(
+      'name' => t('Liste tournois'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'tournoi_four' => array(
       'name' => t('Tournoi 4x4'),
       'base' => 'node_content',

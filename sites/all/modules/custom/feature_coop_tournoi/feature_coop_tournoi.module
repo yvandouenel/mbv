@@ -35,6 +35,14 @@ function feature_coop_tournoi_node_view($node, $view_mode, $langcode) {
       );
     }
   }
+  elseif ($node->type == 'liste_tournois') {
+    $settings = field_extra_fields_get_display('node', $node->type, $view_mode);
+    if($settings["extra_field_list_tournaments"]['visible']){
+      $node->content["extra_field_list_tournaments"] = array(
+        "#markup" => views_embed_view('liste_tournois', 'block_tournament_filtred'),
+      );
+    }
+  }
 }
 
 /**
@@ -64,6 +72,15 @@ function feature_coop_tournoi_field_extra_fields() {
     'display' => array(
       'extra_field_inscrits' => array(
         'label' => t('inscrits (extra)'),
+        'weight' => 0,
+      ),
+    )
+  );
+  // ajoute un extra field au type de contenu liste_tournois
+  $extra['node']['liste_tournois'] = array(
+    'display' => array(
+      'extra_field_list_tournaments' => array(
+        'label' => t('List tournaments (extra)'),
         'weight' => 0,
       ),
     )
