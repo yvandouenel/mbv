@@ -168,7 +168,9 @@
 </div>
 
 <?php if (!empty($page['footer'])): ?>
-  <footer class="footer <?php print $container_class; ?>">
-    <?php print render($page['footer']); ?>
-  </footer>
+  <div class="under-footer">
+    <footer class="footer <?php print $container_class; ?>">
+      <?php print render($page['footer']); ?>
+    </footer>
+  </div>
 <?php endif; ?>
