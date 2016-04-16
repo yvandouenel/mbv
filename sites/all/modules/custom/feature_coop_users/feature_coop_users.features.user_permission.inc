@@ -30,6 +30,16 @@ function feature_coop_users_user_default_permissions() {
     'module' => 'webform',
   );
 
+  // Exported permission: 'access bean overview'.
+  $permissions['access bean overview'] = array(
+    'name' => 'access bean overview',
+    'roles' => array(
+      'Modérateur' => 'Modérateur',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'bean',
+  );
+
   // Exported permission: 'access content'.
   $permissions['access content'] = array(
     'name' => 'access content',
@@ -87,6 +97,26 @@ function feature_coop_users_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'administer bean types'.
+  $permissions['administer bean types'] = array(
+    'name' => 'administer bean types',
+    'roles' => array(
+      'Modérateur' => 'Modérateur',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'bean',
+  );
+
+  // Exported permission: 'administer beans'.
+  $permissions['administer beans'] = array(
+    'name' => 'administer beans',
+    'roles' => array(
+      'Modérateur' => 'Modérateur',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'bean',
   );
 
   // Exported permission: 'administer blocks'.
@@ -522,6 +552,16 @@ function feature_coop_users_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'webform',
+  );
+
+  // Exported permission: 'edit bean view mode'.
+  $permissions['edit bean view mode'] = array(
+    'name' => 'edit bean view mode',
+    'roles' => array(
+      'Modérateur' => 'Modérateur',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'bean',
   );
 
   // Exported permission: 'edit own webform submissions'.
