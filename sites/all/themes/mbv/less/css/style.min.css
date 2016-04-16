@@ -1634,11 +1634,12 @@ header#navbar .container{background-color:#fff}
 @media (min-width:768px){header#navbar .navbar-header{float:none}
 }
 header#navbar h1#h1-logo a.logo{display:block;text-align:center}
+.under-footer{background-color:#474747}
+.under-footer .footer.container{border:0}
 .team-registrated .beach-players{float:left;margin:0}
 .team-registrated .beach-player{padding:0 3px;border-right:1px solid #f0cd3f}
 div.field-name-field-inscription a{background-color:#80bef1;color:#fff;padding:5px 10px;display:block;text-align:center;width:200px;border-radius:6px;font-weight:700;box-shadow:5px 5px 5px 0 #656565}
 div.field-name-field-inscription a:hover{background-color:#f0cd3f;color:#000}
 .view-mode-teaser .field-name-field-inscription{margin-top:40px}
-.view-mode-teaser .field-name-title{border-bottom:1px dashed #474747}
-.view-mode-teaser .field-name-title h2{margin-bottom:5px}
+.view-mode-teaser .field-name-title h2{border-bottom:1px solid #f0cd3f;padding-bottom:5px;margin-bottom:5px}
 .view-mode-teaser .field-name-title h2 a{padding-left:50px;background:url(../images/ballon_bleu.gif) 0 50% no-repeat;display:block}
