@@ -28,6 +28,14 @@ function feature_coop_tournoi_views_api($module = NULL, $api = NULL) {
  */
 function feature_coop_tournoi_node_info() {
   $items = array(
+    'tournoi_four' => array(
+      'name' => t('Tournoi 4x4'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'tournoi_three' => array(
       'name' => t('Tournoi 3x3'),
       'base' => 'node_content',
@@ -84,14 +92,23 @@ function feature_coop_tournoi_default_registration_state() {
  */
 function feature_coop_tournoi_default_registration_type() {
   $items = array();
+  $items['tournoi_four'] = entity_import('registration_type', '{
+    "name" : "tournoi_four",
+    "label" : "Tournoi 4x4",
+    "locked" : "0",
+    "default_state" : "held",
+    "weight" : "0",
+    "rdf_mapping" : [],
+    "data" : { "held_expire" : "1", "held_expire_state" : "pending" }
+  }');
   $items['tournoi_three_registration'] = entity_import('registration_type', '{
     "name" : "tournoi_three_registration",
     "label" : "Tournoi 3x3",
     "locked" : "0",
     "default_state" : "held",
+    "data" : null,
     "weight" : "0",
-    "rdf_mapping" : [],
-    "data" : { "held_expire" : "1", "held_expire_state" : "held" }
+    "rdf_mapping" : []
   }');
   $items['tournoi_two_registration'] = entity_import('registration_type', '{
     "name" : "tournoi_two_registration",

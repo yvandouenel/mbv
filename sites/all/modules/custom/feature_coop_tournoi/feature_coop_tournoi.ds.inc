@@ -12,6 +12,26 @@ function feature_coop_tournoi_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|tournoi_three|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'tournoi_three';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+      ),
+    ),
+  );
+  $export['node|tournoi_three|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|tournoi_two|teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'tournoi_two';
@@ -86,21 +106,19 @@ function feature_coop_tournoi_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'comments',
+        0 => 'field_date',
         1 => 'body',
-        2 => 'field_date',
-        3 => 'field_type_de_tournoi',
-        4 => 'field_galerie_photo',
+        2 => 'field_type_de_tournoi',
+        3 => 'field_galerie_photo',
       ),
       'right' => array(
-        5 => 'field_inscription',
-        6 => 'extra_field_inscrits',
+        4 => 'field_inscription',
+        5 => 'extra_field_inscrits',
       ),
     ),
     'fields' => array(
-      'comments' => 'left',
-      'body' => 'left',
       'field_date' => 'left',
+      'body' => 'left',
       'field_type_de_tournoi' => 'left',
       'field_galerie_photo' => 'left',
       'field_inscription' => 'right',
@@ -133,17 +151,15 @@ function feature_coop_tournoi_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_date',
         2 => 'body',
-        3 => 'field_galerie_photo',
       ),
       'right' => array(
-        4 => 'field_inscription',
+        3 => 'field_inscription',
       ),
     ),
     'fields' => array(
       'title' => 'left',
       'field_date' => 'left',
       'body' => 'left',
-      'field_galerie_photo' => 'left',
       'field_inscription' => 'right',
     ),
     'classes' => array(),

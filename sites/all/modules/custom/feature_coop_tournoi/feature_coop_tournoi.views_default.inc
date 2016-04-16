@@ -110,6 +110,13 @@ function feature_coop_tournoi_views_default_views() {
   $handler->display->display_options['fields']['field_nom_et_pr_nom_joueur_3']['label'] = '';
   $handler->display->display_options['fields']['field_nom_et_pr_nom_joueur_3']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_nom_et_pr_nom_joueur_3']['element_label_colon'] = FALSE;
+  /* Champ: Registration: Nom et prénom joueur 4 */
+  $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['id'] = 'field_nom_et_prenom_joueur_4';
+  $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['table'] = 'field_data_field_nom_et_prenom_joueur_4';
+  $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['field'] = 'field_nom_et_prenom_joueur_4';
+  $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['label'] = '';
+  $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_nom_et_prenom_joueur_4']['element_label_colon'] = FALSE;
   /* Champ: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -117,9 +124,10 @@ function feature_coop_tournoi_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="team-registrated">
 <h4 class="beach-players">Joueurs(euses) : </h4>
-<span class="beach-player">[field_nom_et_prenom_joueur_1]</span> / 
-<span class="beach-player">[field_nom_et_prenom_joueur_2]</span> /
+<span class="beach-player">[field_nom_et_prenom_joueur_1]</span> 
+<span class="beach-player">[field_nom_et_prenom_joueur_2]</span>
 <span class="beach-player">[field_nom_et_pr_nom_joueur_3]</span>
+<span class="beach-player">[field_nom_et_prenom_joueur_4]</span>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $translatables['liste_des_inscrits'] = array(
@@ -139,9 +147,10 @@ function feature_coop_tournoi_views_default_views() {
     t('Block'),
     t('<div class="team-registrated">
 <h4 class="beach-players">Joueurs(euses) : </h4>
-<span class="beach-player">[field_nom_et_prenom_joueur_1]</span> / 
-<span class="beach-player">[field_nom_et_prenom_joueur_2]</span> /
+<span class="beach-player">[field_nom_et_prenom_joueur_1]</span> 
+<span class="beach-player">[field_nom_et_prenom_joueur_2]</span>
 <span class="beach-player">[field_nom_et_pr_nom_joueur_3]</span>
+<span class="beach-player">[field_nom_et_prenom_joueur_4]</span>
 </div>'),
   );
   $export['liste_des_inscrits'] = $view;
