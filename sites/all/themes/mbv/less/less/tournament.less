@@ -1,7 +1,15 @@
-.beach-players{
-  float: left;
-  margin : 0 15px 0 0;
+.team-registrated{
+  .beach-players{
+    float: left;
+    margin: 0;
+  }
+  .beach-player{
+    padding : 0 3px 0 3px;
+    border-right: 1px solid @yellow-mbv;
+  }
+
 }
+
 div.field-name-field-inscription a{
   background-color: @blue-mbv;
   color: white;
@@ -15,5 +23,22 @@ div.field-name-field-inscription a{
   &:hover{
     background-color: @yellow-mbv;
     color: black;
+  }
+}
+.view-mode-teaser {
+  .field-name-field-inscription{
+    margin-top: 40px;
+  }
+  .field-name-title{
+    border-bottom: 1px dashed @black-mbv;
+    h2{
+      margin-bottom: 5px;
+      a{
+        padding-left: 50px;
+        background: url(../images/ballon_bleu.gif) no-repeat 0 50%;
+        display: block;
+      }
+    }
+
   }
 }
