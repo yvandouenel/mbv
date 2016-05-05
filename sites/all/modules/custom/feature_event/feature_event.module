@@ -26,8 +26,7 @@ function feature_event_views_pre_render(&$view) {
                   if (sizeof($value->field_body) > 0) {
                     $value->field_body[0]['rendered']['#markup'] = '<a '.$target.' href="'.$custom_url.'">'.$value->field_body[0]['rendered']['#markup'].'</a>';
                   }
-                dpm($value->node_title);
-                //$value->node_title = '<h3 class="title-event-list"><a '.$target.' href="'.$custom_url.'">'.$value->node_title.'</a></h3>';
+
                   $value->field_field_event_url_target[0]['rendered']['#markup'] = '<h3 class="title-event-list"><a '.$target.' href="'.$custom_url.'">'.$value->node_title.'</a></h3>';
                 }else {
                   $href = ' href="'.drupal_get_path_alias("node/".$value->nid).'" ';
