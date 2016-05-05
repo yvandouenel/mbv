@@ -74,7 +74,7 @@ function feature_coop_tournoi_default_registration_state() {
     "name" : "held",
     "label" : "Held",
     "description" : "Registration is held.",
-    "default_state" : "1",
+    "default_state" : "0",
     "active" : "0",
     "held" : "1",
     "show_on_form" : "0",

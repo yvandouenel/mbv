@@ -74,6 +74,7 @@ function feature_coop_tournoi_ds_layout_settings_info() {
         2 => 'field_type_de_tournoi',
         3 => 'field_galerie_photo',
         4 => 'field_inscription',
+        5 => 'field_image_tournament',
       ),
     ),
     'fields' => array(
@@ -82,6 +83,7 @@ function feature_coop_tournoi_ds_layout_settings_info() {
       'field_type_de_tournoi' => 'ds_content',
       'field_galerie_photo' => 'ds_content',
       'field_inscription' => 'ds_content',
+      'field_image_tournament' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -110,10 +112,11 @@ function feature_coop_tournoi_ds_layout_settings_info() {
         1 => 'body',
         2 => 'field_type_de_tournoi',
         3 => 'field_galerie_photo',
+        4 => 'field_image_tournament',
       ),
       'right' => array(
-        4 => 'field_inscription',
-        5 => 'extra_field_inscrits',
+        5 => 'field_inscription',
+        6 => 'extra_field_inscrits',
       ),
     ),
     'fields' => array(
@@ -121,6 +124,7 @@ function feature_coop_tournoi_ds_layout_settings_info() {
       'body' => 'left',
       'field_type_de_tournoi' => 'left',
       'field_galerie_photo' => 'left',
+      'field_image_tournament' => 'left',
       'field_inscription' => 'right',
       'extra_field_inscrits' => 'right',
     ),

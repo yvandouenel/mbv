@@ -283,7 +283,10 @@ function feature_coop_tournoi_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
+        ),
+        'metatags' => array(
+          'weight' => '6',
         ),
       ),
       'display' => array(
@@ -330,13 +333,16 @@ function feature_coop_tournoi_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
+        ),
+        'metatags' => array(
+          'weight' => '6',
         ),
       ),
       'display' => array(
         'extra_field_inscrits' => array(
           'full' => array(
-            'weight' => '4',
+            'weight' => '5',
             'visible' => TRUE,
           ),
           'teaser' => array(
@@ -373,20 +379,33 @@ function feature_coop_tournoi_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '0',
         ),
+        'metatags' => array(
+          'weight' => '7',
+        ),
       ),
       'display' => array(
         'extra_field_inscrits' => array(
           'full' => array(
-            'weight' => '5',
+            'weight' => '6',
             'visible' => TRUE,
           ),
           'teaser' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+          'default' => array(
             'weight' => '12',
             'visible' => FALSE,
           ),
