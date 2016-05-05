@@ -1633,6 +1633,7 @@ img{max-width:100%}
 h2.page-header{color:#474747}
 .date-display-range{display:inline}
 .droit,.droite,.right{float:right;margin:0 0 0 20px}
+.gauche,.left{float:left;margin:0 20px 0 0}
 header#navbar #block-menu-menu-top,header#navbar .first-top-bar .menu.nav{float:right}
 header#navbar .container{background-color:#fff}
 @media (min-width:768px){header#navbar .navbar-header{float:none}
