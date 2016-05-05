@@ -9,6 +9,7 @@ dependencies[] = menu
 dependencies[] = menu_block
 dependencies[] = search
 dependencies[] = twitter_block
+dependencies[] = views
 features[context][] = home
 features[context][] = large_screen
 features[context][] = partout

@@ -26,6 +26,18 @@ function feature_coop_mbv_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-tournois-block_tournois' => array(
+          'module' => 'views',
+          'delta' => 'tournois-block_tournois',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'views-events-block_evenements_home' => array(
+          'module' => 'views',
+          'delta' => 'events-block_evenements_home',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
         'twitter_block-1' => array(
           'module' => 'twitter_block',
           'delta' => '1',
