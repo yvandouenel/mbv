@@ -44,8 +44,10 @@ function scald_galleria_scald_player() {
 
   // This code will never be hit, but is necessary to mark the string
   // for translation on localize.d.o
+  // @codingStandardsIgnoreStart
   t('Galleria');
   t('Display image gallery using Galleria, a JavaScript image gallery framework.');
+  // @codingStandardsIgnoreEnd
 }
 
 /**
@@ -242,16 +244,16 @@ function scald_galleria_scald_prerender($atom, $context, $options, $mode) {
           // Hardcode for some video providers. However the $atom->file_source
           // should be used.
           if ($item_atom->provider == 'scald_youtube') {
-            $image['iframe'] = 'http://www.youtube.com/embed/' . $item_atom->base_id;
+            $image['iframe'] = 'https://www.youtube.com/embed/' . $item_atom->base_id;
           }
           elseif ($item_atom->provider == 'scald_vimeo') {
-            $image['iframe'] = 'http://player.vimeo.com/video/' . $item_atom->base_id;
+            $image['iframe'] = 'https://player.vimeo.com/video/' . $item_atom->base_id;
           }
           elseif ($item_atom->provider == 'scald_dailymotion') {
-            $image['iframe'] = 'http://www.dailymotion.com/embed/video/' . $item_atom->base_id;
+            $image['iframe'] = 'https://www.dailymotion.com/embed/video/' . $item_atom->base_id;
           }
           elseif ($item_atom->type == 'video') {
-            $image['iframe'] = $item_atom->file_source;
+            $image['iframe'] = file_create_url($item_atom->file_source);
           }
           $images[] = $image;
         }
@@ -271,7 +273,7 @@ function scald_galleria_scald_prerender($atom, $context, $options, $mode) {
           ),
         )) . "');";
     }
-    $inline_js .= "Galleria.run('." . $galleria_id . "'" . $options . ");";
+    $inline_js .= "if (jQuery('." . $galleria_id . "').length > 0) { Galleria.run('." . $galleria_id . "'" . $options . "); }";
 
     $atom->rendered->player = array(
       '#theme' => 'scald_galleria',
@@ -282,7 +284,9 @@ function scald_galleria_scald_prerender($atom, $context, $options, $mode) {
         'js' => array(
           scald_galleria_get_library_file() => array(),
           $inline_js => array('type' => 'inline', 'scope' => 'footer'),
+          // @codingStandardsIgnoreStart
           drupal_get_path('module', 'scald_galleria') . '/scald_galleria.js',
+          // @codingStandardsIgnoreEnd
         ),
       ),
     );
@@ -323,6 +327,8 @@ function scald_galleria_preprocess_scald_galleria(&$vars) {
       $attributes['class'] = 'iframe';
     }
 
+    drupal_alter('scald_galleria_item', $image, $attributes, $vars);
+
     $thumb = theme(
       'image',
       array(
@@ -347,8 +353,9 @@ function scald_galleria_preprocess_scald_galleria(&$vars) {
 /**
  * Gets Galleria js file (based on galleria.module).
  *
- * @param $theme Defines theme that should be loaded. Main Galleria JS will be
- *   returned if set to NULL.
+ * @param string $theme
+ *    Defines theme that should be loaded. Main Galleria JS will be
+ *    returned if set to NULL.
  */
 function scald_galleria_get_library_file($theme = NULL) {
   $cache_suffix = $theme ? "_$theme" : '';
@@ -380,4 +387,3 @@ function scald_galleria_get_library_file($theme = NULL) {
     return FALSE;
   }
 }
-

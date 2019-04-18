@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Theme implementation of the Scald Galleria player
+ * Theme implementation of the Scald Galleria player.
  *
  * Variables:
  * - $options: An array of settings from the player.

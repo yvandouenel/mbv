@@ -1,9 +1,10 @@
 /**
  * @file
- * scald_galleria_fullscreen_toggle.js
+ * File name: scald_galleria_fullscreen_toggle.js.
  *
  * Makes it possible to toggle fullscreen mode in galleria.
  */
+
 (function ($) {
 
   /**

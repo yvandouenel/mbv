@@ -1,9 +1,10 @@
 /**
  * @file
- * scald_galleria.js
+ * File name: scald_galleria.js.
  *
  * General alterations on the galleria library.
  */
+
 (function ($) {
 
   /**

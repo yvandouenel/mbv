@@ -7,7 +7,8 @@ Download, install and enable as usual. No configuration required.
 
 2. - Install the Galleria Javascript library.
 If your site doesn't have the directory sites/all/libraries, create it now.
-Visit http://galleria.io/ and click the 'Free download' button. Save the zip file.
+Visit http://galleria.io/ and click the 'Free download' button.
+Save the zip file.
 Extract the contents, then copy the galleria directory and all its contents
 to sites/all/libraries. You should end up with path sites/all/libraries/galleria
 

@@ -76,4 +76,3 @@ function scald_gallery_installed_instances() {
 
   return $instances;
 }
-

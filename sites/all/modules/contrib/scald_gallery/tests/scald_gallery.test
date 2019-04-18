@@ -24,7 +24,7 @@ class ScaldGalleryTestCase extends ScaldWebTestCase {
    * {@inheritdoc}
    */
   protected function setUp() {
-    parent::setUp(array('scald_image', 'scald_gallery'));
+    parent::setUp(array('scald_image', 'scald_gallery', 'mee'));
     $this->web_user = $this->drupalCreateUser(array(
       'create atom of gallery type',
       'view any atom',
